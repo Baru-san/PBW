@@ -102,29 +102,15 @@
                     button.disabled = true;
                     return input;
                 }
-                function add(a, b) {
-                    var a1 = parseFloat(a);
-                    var b1 = parseFloat(b);
-                    var c = a1+b1;
-                    return c;
+
+                function getNilai1(){
+                    var x = parseFloat(document.getElementById('nilai1').value);
+                    return x;
                 }
-                function kurang(a, b) {
-                    var angka1 = parseFloat(a);
-                    var angka2 = parseFloat(b);
-                    var hasil = angka1-angka2;
-                    return hasil;
-                }
-                function multiplication(a, b) {
-                    var angka1 = parseFloat(a);
-                    var angka2 = parseFloat(b);
-                    var hasil = angka1*angka2;
-                    return hasil;
-                }
-                function bagi(a, b) {
-                    var angka1 = parseFloat(a);
-                    var angka2 = parseFloat(b);
-                    var hasil = angka1/angka2;
-                    return hasil;
+
+                function getNilai2(){
+                    var y = parseFloat(document.getElementById('nilai2').value);
+                    return y;
                 }
 
                 function pilihOperasi(){
@@ -134,16 +120,20 @@
                     button.disabled = true;
                     switch (operasipilihan){
                         case 1:
-                            return add(document.getElementById('nilai1').value, document.getElementById('nilai2').value);
+                            var hasil = getNilai1()+getNilai2();
+                            return hasil;
                             break;
                         case 2:
-                            return kurang(document.getElementById('nilai1').value, document.getElementById('nilai2').value);
+                            var hasil = getNilai1() - getNilai2();
+                            return hasil;
                             break;
                         case 3:
-                            return multiplication(document.getElementById('nilai1').value, document.getElementById('nilai2').value);
+                            var hasil = getNilai1() * getNilai2();
+                            return hasil;
                             break;
                         case 4:
-                            return bagi(document.getElementById('nilai1').value, document.getElementById('nilai2').value);
+                            var hasil = getNilai1() / getNilai2();
+                            return hasil;
                             break;
                     }
 
